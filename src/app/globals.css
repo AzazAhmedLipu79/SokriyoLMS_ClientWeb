@@ -3,25 +3,101 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+  --pink: #fc5d8d;
+  --white: #ffffff;
+  --black: #0f172a;
+  --purple: #f500a2;
+  --primary: var(--pink);
+  --primary-light: #ffb6c1;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: var(--white);
+  /* height: 100vh; */
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.bg-primary {
+  background-color: var(--pink) !important;
+}
+.text-primary {
+  color: var(--pink);
+}
+
+.text-hard {
+  color: var(--purple);
+}
+.bg-background {
+  background-color: var(--pink) !important;
+}
+
+/* Anchor */
+.a_nav {
+  @apply p-2 lg:px-4 md:mx-2 text-gray-600 rounded hover:bg-gray-200 hover:text-gray-700 transition-colors duration-300;
+}
+
+.a_nav:hover {
+  @apply p-2 lg:py-2 md:mx-2 text-white rounded-xl bg-primary;
+}
+.a_link {
+  color: var(--primary);
+}
+
+/* .containers {
+  @apply w-full   flex flex-col items-center  
+  @apply mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8;;
+} */
+
+/* ----  BUTTON */
+.btn {
+  @apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 p-1;
+}
+
+.btn-primary {
+  font-size: 14px;
+  background-color: var(--primary);
+  color: white;
+  padding: 7px 21px;
+  border-radius: 4px;
+}
+.btn-primary:hover {
+  background-color: var(--primary-light);
+  color: var(--primary);
+}
+.btn-outline {
+  border: 1px solid var(--primary-color) !important;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.btn-outline:hover {
+  background-color: var(--primary-color) !important;
+  color: white;
+}
+.btn-inverse {
+  font-size: medium;
+  background-color: white;
+  color: var(--primary-color);
+  font-weight: 900;
+  padding: 10px 6px;
+  border: 1px solid var(--primary-color);
+  border-radius: 10px;
+}
+.btn-inverse:hover {
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: 700;
+}
+
+.hero h2 {
+  background-color: var(--pink) !important;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.border-primary {
+  border-color: var(--primary) !important;
 }
